@@ -1,13 +1,12 @@
 # Dripsfromzeetoo
 
-# Dripsfromzeetoo
-
 A high-performance, futuristic eyewear platform and digital storefront engineered to showcase premium frames ranging across diverse styles, sizes, and colorways. 
 
 ## ✨ Key Features
 
 * **Curated Eyewear Catalog:** Multi-range optical framing options including lightweight titanium aviators, geometric silhouettes, and wrap-around neon shields.
-* **Interactive Colorway Selection:** Dynamic shade customization and real-time palette toggling.
+* **Interactive Color way Selection:** Dynamic shade customization and real-time palette toggling.
+* 
 * **Virtual Try-On Integration:** Built-in camera feed support allowing users to preview different frames and filters directly in-browser.
 * **Slide-over Shopping Cart & Checkout:** Seamless client-side cart management with instantaneous subtotal calculations and secure payment checkout routing.
 
