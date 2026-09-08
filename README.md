@@ -1,16 +1,18 @@
 # Dripsfromzeetoo
 
-A high-performance e-commerce platform engineered for modern streetwear drops, combining clean aesthetics with seamless navigation.
+# Dripsfromzeetoo
 
-Tech Stack
-Framework: Next.js (App Router)
-Styling: Tailwind CSS
-Database & Backend: Supabase featuring PostgreSQL with atomic inventory RPC functions
-Payments & Marketing: Stripe API and Klaviyo integration
-Workflow: Streamlined for rapid mobile development and deployment via GitHub, Vercel, and iOS git workflows
+A high-performance, futuristic eyewear platform and digital storefront engineered to showcase premium frames ranging across diverse styles, sizes, and colorways. 
 
-Core Features
-Sleek UI/UX: Tailored landing pages and responsive layouts built specifically for streetwear releases.
-Atomic Inventory Management: Real-time stock tracking powered by Supabase PostgreSQL functions to flawlessly handle high-demand drops.
-Streamlined Checkout: Integrated Stripe API routes ensuring secure, frictionless user transactions.
-Interactive Cart: Slide-over cart drawer components designed with smooth, fluid transitions.
+## ✨ Key Features
+
+* **Curated Eyewear Catalog:** Multi-range optical framing options including lightweight titanium aviators, geometric silhouettes, and wrap-around neon shields.
+* **Interactive Colorway Selection:** Dynamic shade customization and real-time palette toggling.
+* **Virtual Try-On Integration:** Built-in camera feed support allowing users to preview different frames and filters directly in-browser.
+* **Slide-over Shopping Cart & Checkout:** Seamless client-side cart management with instantaneous subtotal calculations and secure payment checkout routing.
+
+## 🛠️ Tech Stack
+
+* **Markup & Styling:** HTML5, Tailwind CSS (via CDN)
+* **Interactivity:** Vanilla JavaScript (DOM state management & MediaDevices API for camera integration)
+* **Hosting:** GitHub Pages / Vercel
