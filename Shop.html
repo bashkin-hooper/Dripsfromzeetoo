@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Eyewear & Virtual Try-On | Pulse Visuals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pulseDark: '#0B0D12',
+                        pulseCard: '#151821',
+                        pulseAccent: '#FF3366',
+                        pulseBlue: '#00F0FF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-pulseDark text-gray-100 font-sans antialiased selection:bg-pulseAccent selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-pulseDark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-black tracking-widest text-white">
+                PULSE<span class="text-pulseAccent">.</span>VISUALS
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-pulseAccent transition">Home</a>
+                <a href="shop.html" class="text-white">Shop Eyewear</a>
+                <a href="#try-on" class="hover:text-pulseBlue transition">Virtual Try-On</a>
+                <a href="contact.html" class="hover:text-pulseAccent transition">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-pulseAccent text-white text-xs font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Catalog Section -->
+    <main class="pt-32 pb-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-semibold uppercase tracking-widest text-pulseAccent mb-4 block">Catalog</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Explore Frames & Shades</h1>
+            <p class="text-gray-400">Choose from an array of architectural ranges and multi-tone lens options.</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+            
+            <!-- Product 1 -->
+            <div class="bg-pulseCard rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-between group">
+                <div class="p-8 bg-black/40 flex items-center justify-center relative h-64">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pulseAccent/10 to-transparent"></div>
+                    <svg class="w-32 h-32 text-pulseAccent group-hover:scale-105 transition duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10h5l3 5h4l3-5h5M2 10c0-2 2-4 5-4s5 2 5 4M22 10c0-2-2-4-5-4s-5 2-5 4"/></svg>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-bold text-white">The Apex Aviator</h3>
+                            <span class="text-pulseAccent font-semibold">$185</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Titanium frame built for lightweight structural durability.</p>
+                        <!-- Color Options -->
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="w-4 h-4 rounded-full bg-amber-500 cursor-pointer border border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-gray-900 cursor-pointer"></span>
+                            <span class="w-4 h-4 rounded-full bg-emerald-600 cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <button onclick="addToCart('The Apex Aviator', 185)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-pulseCard rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-between group">
+                <div class="p-8 bg-black/40 flex items-center justify-center relative h-64">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-pulseBlue/10 to-transparent"></div>
+                    <svg class="w-32 h-32 text-pulseBlue group-hover:scale-105 transition duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="12" r="4"/><circle cx="18" cy="12" r="4"/><path d="M10 12h4"/></svg>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-bold text-white">Cyber Round 02</h3>
+                            <span class="text-pulseAccent font-semibold">$160</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Geometric silhouette featuring anti-glare polarized coatings.</p>
+                        <!-- Color Options -->
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="w-4 h-4 rounded-full bg-purple-600 cursor-pointer border border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-blue-500 cursor-pointer"></span>
+                            <span class="w-4 h-4 rounded-full bg-rose-500 cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <button onclick="addToCart('Cyber Round 02', 160)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-pulseCard rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-between group">
+                <div class="p-8 bg-black/40 flex items-center justify-center relative h-64">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent"></div>
+                    <svg class="w-32 h-32 text-purple-400 group-hover:scale-105 transition duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="20" height="8" rx="2"/><path d="M6 8V6a2 2 0 012-2h8a2 2 0 012 2v2"/></svg>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-bold text-white">Neon Shield X</h3>
+                            <span class="text-pulseAccent font-semibold">$210</span>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Futuristic wrap-around mono-lens for total UV protection.</p>
+                        <!-- Color Options -->
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="w-4 h-4 rounded-full bg-cyan-400 cursor-pointer border border-white"></span>
+                            <span class="w-4 h-4 rounded-full bg-zinc-700 cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <button onclick="addToCart('Neon Shield X', 210)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Virtual Try-On Section -->
+        <section id="try-on" class="bg-pulseCard border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-pulseBlue/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <span class="text-xs font-semibold uppercase tracking-widest text-pulseBlue mb-2 block">Augmented Fitting Room</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Virtual Shade Try-On</h2>
+                <p class="text-gray-400 text-sm md:text-base">Enable your device camera to preview different frames and color filters directly on your feed.</p>
+            </div>
+
+            <!-- Camera Display Frame -->
+            <div class="relative max-w-xl mx-auto bg-black rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] flex items-center justify-center shadow-2xl">
+                <!-- Video Stream Element -->
+                <video id="webcam" autoplay playsinline class="absolute inset-0 w-full h-full object-cover -scale-x-100 hidden"></video>
+
+                <!-- Overlay Placeholder (Shown before camera loads) -->
+                <div id="cameraPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center bg-zinc-900 text-center p-6">
+                    <svg class="w-12 h-12 text-gray-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <p class="text-sm text-gray-400 mb-4">Camera feed is offline</p>
+                    <button onclick="startCamera()" class="px-6 py-2.5 rounded-xl bg-pulseBlue text-black font-bold text-sm hover:opacity-90 transition">
+                        Start Camera Feed
+                    </button>
+                </div>
+
+                <!-- Simulated Shade Overlay Filter -->
+                <div id="shadeOverlay" class="absolute inset-0 pointer-events-none transition-all duration-300 opacity-0 flex items-center justify-center">
+                    <div class="w-48 h-16 border-4 border-pulseAccent/80 rounded-2xl bg-pulseAccent/20 backdrop-blur-[2px] shadow-lg flex items-center justify-center">
+                        <span id="activeShadeLabel" class="text-xs uppercase font-bold text-white tracking-widest">Apex Aviator</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shade Selector Controls (Active when camera is running) -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                <button onclick="selectShade('Apex Aviator', 'border-pulseAccent bg-pulseAccent/20')" class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold hover:border-pulseAccent transition">
+                    Apex Aviator
+                </button>
+                <button onclick="selectShade('Cyber Round', 'border-pulseBlue bg-pulseBlue/20')" class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold hover:border-pulseBlue transition">
+                    Cyber Round
+                </button>
+                <button onclick="selectShade('Neon Shield', 'border-purple-500 bg-purple-500/20')" class="px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold hover:border-purple-500 transition">
+                    Neon Shield
+                </button>
+                <button onclick="stopCamera()" class="px-5 py-2.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold hover:bg-red-500 hover:text-white transition">
+                    Stop Camera
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Slide-over Cart Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-pulseCard border-l border-white/10 p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                        <h2 class="text-lg font-bold text-white">Your Shopping Cart</h2>
+                        <button onclick="toggleCart()" class="text-gray-400 hover:text-white">✕</button>
+                    </div>
+                    <div id="cartItemsContainer" class="py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                        <p class="text-gray-500 text-sm text-center py-8">Your cart is currently empty.</p>
+                    </div>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                    <div class="flex justify-between font-bold text-white mb-4">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+                    <button onclick="alert('Proceeding to secure checkout...')" class="w-full py-3 rounded-xl bg-pulseAccent text-white font-bold hover:bg-pulseAccent/90 transition">
+                        Checkout Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Pulse Visuals. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="shop.html" class="hover:text-gray-300">Shop</a>
+                <a href="contact.html" class="hover:text-gray-300">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
