@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyewear Catalog | Pulse Visuals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pulseDark: '#0B0D12',
+                        pulseCard: '#151821',
+                        pulseAccent: '#FF3366',
+                        pulseBlue: '#00F0FF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-pulseDark text-gray-100 font-sans antialiased selection:bg-pulseAccent selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-pulseDark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-black tracking-widest text-white">
+                PULSE<span class="text-pulseAccent">.</span>VISUALS
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-pulseAccent transition">Home</a>
+                <a href="catalog.html" class="text-white">Catalog</a>
+                <a href="contact.html" class="hover:text-pulseAccent transition">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition flex items-center gap-2">
+                    <svg class="w-5 h-5 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-pulseAccent text-white text-xs font-bold rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Section -->
+    <main class="min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/5 border border-white/10 text-pulseAccent mb-4 inline-block">
+                Optical Collection
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Frames & Styles</h1>
+            <p class="text-gray-400 text-lg">Explore our range of sizes, distinct colors, and futuristic frame silhouettes.</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Item 1 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Titanium Aviator Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Chronos Titanium Aviator</h3>
+                        <span class="text-pulseAccent font-bold">$180.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Oversized Metal | Colors: Matte Black / Gold | Size: Large</p>
+                </div>
+                <button onclick="addToCart('Chronos Titanium Aviator', 180)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Geometric Shield Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Cyber Neon Shield</h3>
+                        <span class="text-pulseAccent font-bold">$145.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Wraparound Mask | Colors: Acid Blue / Tinted | Size: Standard</p>
+                </div>
+                <button onclick="addToCart('Cyber Neon Shield', 145)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Minimalist Hexagon Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Apex Minimalist Hex</h3>
+                        <span class="text-pulseAccent font-bold">$160.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Geometric Wire | Colors: Rose Gold / Clear | Size: Compact</p>
+                </div>
+                <button onclick="addToCart('Apex Minimalist Hex', 160)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Stealth Rectangle Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Void Stealth Rectangle</h3>
+                        <span class="text-pulseAccent font-bold">$130.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Thick Acetate | Colors: Ghost Smoke / Onyx | Size: Medium</p>
+                </div>
+                <button onclick="addToCart('Void Stealth Rectangle', 130)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Matrix Oval Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Matrix Oval Slim</h3>
+                        <span class="text-pulseAccent font-bold">$125.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Narrow Oval | Colors: Silver Mirror / Dark Amber | Size: Slim</p>
+                </div>
+                <button onclick="addToCart('Matrix Oval Slim', 125)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="bg-pulseCard border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-pulseAccent/50 transition">
+                <div>
+                    <div class="h-48 bg-white/5 rounded-xl mb-6 flex items-center justify-center border border-white/5 text-gray-500 font-mono text-sm">
+                        [Solar Navigator Render]
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-lg font-bold text-white">Solar Navigator Browline</h3>
+                        <span class="text-pulseAccent font-bold">$175.00</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Frame: Clubmaster Hybrid | Colors: Tortoiseshell / Bronze | Size: Large</p>
+                </div>
+                <button onclick="addToCart('Solar Navigator Browline', 175)" class="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-pulseAccent hover:border-pulseAccent transition">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Slide-over Cart Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-pulseCard border-l border-white/10 p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                        <h2 class="text-lg font-bold text-white">Your Shopping Cart</h2>
+                        <button onclick="toggleCart()" class="text-gray-400 hover:text-white">✕</button>
+                    </div>
+                    <div id="cartItemsContainer" class="py-6 space-y-4 max-h-[60vh] overflow-y-auto">
+                        <p class="text-gray-500 text-sm text-center py-8">Your cart is currently empty.</p>
+                    </div>
+                </div>
+                <div class="border-t border-white/10 pt-4">
+                    <div class="flex justify-between font-bold text-white mb-4">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+                    <button onclick="openCheckoutModal()" class="w-full py-3 rounded-xl bg-pulseAccent text-white font-bold hover:bg-pulseAccent/90 transition">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Portal Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center hidden px-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeCheckoutModal()"></div>
+        <div class="relative bg-pulseCard border border-white/10 rounded-2xl max-w-lg w-full p-8 z-10 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                <h3 class="text-xl font-extrabold text-white">Secure Checkout Portal</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-white">✕</button>
+            </div>
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Cardholder Name</label>
+                    <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pulseAccent" placeholder="Jane Doe">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Card Number</label>
+                    <input type="text" required maxlength="19" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pulseAccent" placeholder="4242 •••• •••• 4242">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Expiration Date</label>
+                        <input type="text" required placeholder="MM/YY" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pulseAccent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">CVV</label>
+                        <input type="password" required maxlength="4" placeholder="123" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pulseAccent">
+                    </div>
+                </div>
+                <button type="submit" class="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-pulseAccent to-pulseBlue text-black font-extrabold tracking-wide hover:opacity-95 transition">
+                    Authorize Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Pulse Visuals. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="catalog.html" class="hover:text-gray-300">Catalog</a>
+                <a href="contact.html" class="hover:text-gray-300">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
